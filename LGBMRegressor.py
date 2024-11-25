@@ -6,7 +6,7 @@ from sklearn.impute import SimpleImputer
 import xgboost as xgb
 
 # Load the dataset
-df = pd.read_csv('/kaggle/input/tech-olympiad-2024-bahrain-zain-challenge/TrainData.csv', delimiter='|')
+df = pd.read_csv('tech-olympiad-2024-bahrain-zain-challenge/TestData.csv', delimiter='|')
 
 features = ['CO(GT)', 'PT08.S1(CO)', 'PT08.S2(NMHC)', 'PT08.S2_NMHC_to_PT08.S1_CO_Ratio',
             'NMHC(GT)', 'NOx(GT)', 'PT08.S3(NOx)', 'NO2(GT)', 'PT08.S4(NO2)', 'PT08.S5(O3)']
@@ -88,7 +88,7 @@ print(f"Shape of train_data['RH']: {train_data['RH'].shape}")
 lgb_model = lgb.LGBMRegressor(objective='regression', random_state=42)
 lgb_model.fit(X_train_scaled, train_data['RH'])
 
-# Make predictions for Kaggle test set
+# Make predictions for  test set
 y_test_pred_kaggle = lgb_model.predict(X_test_kaggle_scaled)
 
 # Create a submission DataFrame (assuming the test set has an 'ID' column)
