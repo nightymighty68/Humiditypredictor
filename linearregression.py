@@ -7,7 +7,7 @@ from sklearn.preprocessing import StandardScaler
 import pandas as pd
 
 # Load the dataset
-df = pd.read_csv('/kaggle/input/tech-olympiad-2024-bahrain-zain-challenge/TrainData.csv', delimiter='|')  # Replace with your actual data file
+df = pd.read_csv('tech-olympiad-2024-bahrain-zain-challenge/TrainData.csv', delimiter='|')  # Replace with your actual data file
 
 features = ['CO(GT)','PT08.S1(CO)','PT08.S2(NMHC)','PT08.S2_NMHC_to_PT08.S1_CO_Ratio','NMHC(GT)','NOx(GT)','PT08.S3(NOx)','NO2(GT)','PT08.S4(NO2)','PT08.S5(O3)']  # Replace with actual columns
 target = 'RH'  # Replace with the actual target column name
